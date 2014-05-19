@@ -39,7 +39,7 @@ def changeChromes(chrom):
 def changePugh(file,output, head=True):
 	##combines forward and reverse reads into a total and outputs file
 	if head==True: header = file.readline() #get rid of header
-	assert len(header.split()) in range(3, 5)
+	assert len(header.split()) == 4 ##make sure the input is a pugh genetrack file 
 	for line in file:
 		listline = line.rstrip().split('\t')
 		total = float(listline[2])+float(listline[3])
